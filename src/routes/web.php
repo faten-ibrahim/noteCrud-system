@@ -11,4 +11,4 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::resource('notices', NoticeController::class);
+Route::resource('notices', NoticeController::class)->middleware('auth');;
