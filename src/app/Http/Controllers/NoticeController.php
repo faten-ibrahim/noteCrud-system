@@ -42,7 +42,7 @@ class NoticeController extends Controller
      */
     public function create()
     {
-        //
+        return view('notices.create');
     }
 
     /**
@@ -50,7 +50,12 @@ class NoticeController extends Controller
      */
     public function store(StoreNoticeRequest $request)
     {
-        //
+        $this->noticeRepository->create([
+            'content' => $request['content'],
+            'user_id' => auth()->user()->id
+        ]);
+
+        return redirect()->route('notices.index')->with('status', 'Notice Added successfully !');
     }
 
     /**
@@ -67,6 +72,7 @@ class NoticeController extends Controller
     public function edit(Notice $notice)
     {
         Gate::authorize('update', $notice);
+        return view('notices.edit', compact('notice'));
     }
 
     /**
@@ -75,6 +81,8 @@ class NoticeController extends Controller
     public function update(UpdateNoticeRequest $request, Notice $notice)
     {
         Gate::authorize('update', $notice);
+        $this->noticeRepository->update($notice->id, $request->only(['content']));
+        return redirect()->route('notices.index')->with('status', 'Notice Updated successfully !');
     }
 
     /**
@@ -83,6 +91,8 @@ class NoticeController extends Controller
     public function destroy(Notice $notice)
     {
         Gate::authorize('delete', $notice);
+        $this->noticeRepository->delete($notice);
+        return redirect()->route('notices.index')->with('status', 'Notice Deleted successfully !');
     }
 
     /**

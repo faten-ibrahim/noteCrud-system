@@ -37,9 +37,8 @@ class NoticeRepository extends BaseRepository implements NoticeRepositoryInterfa
      * @param  string $id
      * @return void
      */
-    public function delete($id): void
+    public function delete($notice): void
     {
-        $notice = Notice::findOrFail($id);
         $notice->delete();
     }
 }

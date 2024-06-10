@@ -11,7 +11,7 @@ class UpdateNoticeRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,7 @@ class UpdateNoticeRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'content' => 'required|max:500|min:3'
         ];
     }
 }

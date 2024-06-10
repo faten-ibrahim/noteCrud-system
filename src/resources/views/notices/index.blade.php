@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>notices</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/css/bootstrap.min.css" rel="stylesheet">
@@ -8,45 +9,74 @@
     <script src="https://cdn.datatables.net/1.11.4/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.11.4/js/dataTables.bootstrap5.min.js"></script>
 </head>
+
 <body>
 
-<div class="container">
-    <div class="card mt-5">
-        <h3 class="card-header p-3">My Notices</h3>
-        <div class="card-body">
-            <table class="table table-bordered data-table">
-                <thead>
-                    <tr>
-                        <th>No</th>
-                        <th>content</th>
-                        <th>Created At</th>
-                        <th width="100px">Action</th>
-                    </tr>
-                </thead>
-                <tbody>
-                </tbody>
-            </table>
+    <div class="container">
+        <div class="card mt-5">
+            <h3 class="card-header p-3">My Notices</h3>
+            <div class="card-body">
+
+                @if (session('status'))
+                    <div class="alert alert-success">
+                        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                        {{ session('status') }}
+                    </div>
+                @endif
+                <br>
+                <a class="btn btn-info btn-sm" href="notices/create"><i class="fa fa-plus"></i><span>Add New
+                        Notice</span></a><br><br>
+
+                <table class="table table-bordered data-table">
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>content</th>
+                            <th>Created At</th>
+                            <th width="100px">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
-</div>
 
 </body>
 
 <script type="text/javascript">
-  $(function () {
+    $(function() {
 
-    var table = $('.data-table').DataTable({
-        processing: true,
-        serverSide: true,
-        ajax: "{{ route('notices.index') }}",
-        columns: [
-            {data: 'id', name: 'id'},
-            {data: 'content', name: 'content',"width": "70%" },
-            {data: 'created_at', name: 'created_at'},
-            {data: 'action', "width": "14%", name: 'action', orderable: false, searchable: false},
-        ]
+        var table = $('.data-table').DataTable({
+            processing: true,
+            serverSide: true,
+            ajax: "{{ route('notices.index') }}",
+            columns: [{
+                    data: 'id',
+                    name: 'id'
+                },
+                {
+                    data: 'content',
+                    name: 'content',
+                    "width": "70%"
+                },
+                {
+                    data: 'created_at',
+                    "width": "17%",
+                    name: 'created_at'
+                },
+                {
+                    data: 'action',
+                    "width": "14%",
+                    name: 'action',
+                    orderable: false,
+                    searchable: false
+                },
+            ]
+        });
+
     });
-
-  });
 </script>
+
 </html>
