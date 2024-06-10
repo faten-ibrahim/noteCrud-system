@@ -45,9 +45,8 @@ class BaseRepository implements EloquentRepositoryInterface
      * @param  array $data
      * @return Model
      */
-    public function update($id, array $data): Model
+    public function update(Model $model, array $data): Model
     {
-        $model = $this->model->findOrFail($id);
         $model->update($data);
         return $model;
     }

@@ -81,7 +81,7 @@ class NoticeController extends Controller
     public function update(UpdateNoticeRequest $request, Notice $notice)
     {
         Gate::authorize('update', $notice);
-        $this->noticeRepository->update($notice->id, $request->only(['content']));
+        $this->noticeRepository->update($notice, $request->only(['content']));
         return redirect()->route('notices.index')->with('status', 'Notice Updated successfully !');
     }
 

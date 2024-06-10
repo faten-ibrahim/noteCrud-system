@@ -30,6 +30,6 @@ interface EloquentRepositoryInterface
      * @param  array $data
      * @return Model
      */
-    public function update($id, array $data): Model;
+    public function update(Model $model, array $data): Model;
 
 }
