@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\AuthController;
+use App\Http\Controllers\Api\NoticeController;
 use App\Http\Controllers\Api\ProfileController;
 
 Route::group([
@@ -17,4 +18,5 @@ Route::group([
 
 Route::middleware('auth:api')->group(function () {
     Route::post('/users/{user}', [ProfileController::class, 'update']);
+    Route::apiResource('notices', NoticeController::class);
 });
