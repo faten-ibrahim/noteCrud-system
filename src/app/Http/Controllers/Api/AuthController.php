@@ -83,7 +83,10 @@ class AuthController extends Controller
     {
         auth()->logout();
 
-        return response()->json(['message' => 'Successfully logged out']);
+        return response()->json([
+            'success' => 'true', 'status_code' => Response::HTTP_OK,
+            'data' => ['message' => 'Successfully logged out']
+        ])->setStatusCode(Response::HTTP_OK);
     }
 
 }
