@@ -5,6 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Builder;
+
 
 class Notice extends Model
 {
@@ -40,15 +42,14 @@ class Notice extends Model
         return $this->belongsTo(User::class);
     }
 
-     /**
-     * Check if sme own session.
-     *
-     * @param $sme
-     * @return bool
-     */
-    public function ownedBy($userId)
+    /**
+    * @param Builder $builder
+    * @param string User id
+    * @return builder
+    */
+    public function scopeOwnedBy(Builder $builder, $userId): void
     {
-        return $userId === $this->user_id;
+        $builder->where('user_id', $userId);
     }
 
 }

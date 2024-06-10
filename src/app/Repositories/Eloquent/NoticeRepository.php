@@ -16,7 +16,7 @@ class NoticeRepository extends BaseRepository implements NoticeRepositoryInterfa
      *
      * @param User $model
      */
-    public function __construct(User $model)
+    public function __construct(Notice $model)
     {
         parent::__construct($model);
     }

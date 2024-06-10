@@ -37,6 +37,6 @@ class DatabaseSeeder extends Seeder
         ]);
 
         foreach ($users as $user)
-            Notice::factory()->count(array_rand([5, 15, 20]))->make(['user_id' => $user->id]);
+            Notice::factory()->count(30)->create(['user_id' => $user->id]);
     }
 }
