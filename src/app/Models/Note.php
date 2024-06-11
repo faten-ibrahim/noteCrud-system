@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Builder;
 
 
-class Notice extends Model
+class Note extends Model
 {
     use HasFactory;
 

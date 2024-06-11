@@ -8,12 +8,12 @@
                     <div class="card-body">
                         <div class="ibox float-e-margins">
                             <div class="ibox-title">
-                                <h5>Create Notice</h5>
+                                <h5>Create Note</h5>
                             </div>
                             <div class="ibox-content">
                                 <div class="row">
                                     <div class="col-md-12">
-                                        <form role="form" method="POST" action="{{ route('notices.store') }}"
+                                        <form role="form" method="POST" action="{{ route('notes.store') }}"
                                             style=" width:90% ">
                                             @csrf
                                             <div class="form-group">

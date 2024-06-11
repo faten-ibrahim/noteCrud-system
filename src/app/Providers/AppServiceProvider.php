@@ -2,8 +2,8 @@
 
 namespace App\Providers;
 
-use App\Models\Notice;
-use App\Policies\NoticePolicy;
+use App\Models\Note;
+use App\Policies\NotePolicy;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Gate;
 
@@ -23,7 +23,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        Gate::policy(Notice::class, NoticePolicy::class);
+        Gate::policy(Note::class, NotePolicy::class);
 
     }
 }

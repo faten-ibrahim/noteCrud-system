@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\NoticeController;
+use App\Http\Controllers\NoteController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -11,4 +11,4 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::resource('notices', NoticeController::class)->middleware('auth');;
+Route::resource('notes', NoteController::class)->middleware('auth');;

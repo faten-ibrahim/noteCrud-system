@@ -8,9 +8,9 @@
                     <div class="card-header">{{ __('Dashboard') }}</div>
 
                     <div class="card-body">
-                        <a href="{{ route('notices.index') }}"
+                        <a href="{{ route('notes.index') }}"
                             class=" alert alert-success rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white">
-                            Notices
+                            Notes
                         </a>
                         </br>
                         </br>

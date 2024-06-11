@@ -2,13 +2,12 @@
 
 namespace App\Repositories\Eloquent;
 
-use App\Models\Notice;
+use App\Models\Note;
 use App\Models\User;
-use App\Repositories\NoticeRepositoryInterface;
-use App\Repositories\UserRepositoryInterface;
+use App\Repositories\NoteRepositoryInterface;
 use Illuminate\Support\Collection;
 
-class NoticeRepository extends BaseRepository implements NoticeRepositoryInterface
+class NoteRepository extends BaseRepository implements NoteRepositoryInterface
 {
 
     /**
@@ -16,13 +15,13 @@ class NoticeRepository extends BaseRepository implements NoticeRepositoryInterfa
      *
      * @param User $model
      */
-    public function __construct(Notice $model)
+    public function __construct(Note $model)
     {
         parent::__construct($model);
     }
 
     /**
-     * get all notices
+     * get all notes
      *
      * @return Collection
      */
@@ -32,13 +31,13 @@ class NoticeRepository extends BaseRepository implements NoticeRepositoryInterfa
     }
 
     /**
-     * delete notice
+     * delete note
      *
      * @param  string $id
      * @return void
      */
-    public function delete($notice): void
+    public function delete($note): void
     {
-        $notice->delete();
+        $note->delete();
     }
 }

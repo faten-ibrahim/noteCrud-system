@@ -2,9 +2,8 @@
 
 namespace Database\Seeders;
 
-use App\Models\Notice;
+use App\Models\Note;
 use App\Models\User;
-use Database\Factories\NoticeFactory;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
@@ -37,6 +36,6 @@ class DatabaseSeeder extends Seeder
         ]);
 
         foreach ($users as $user)
-            Notice::factory()->count(30)->create(['user_id' => $user->id]);
+            Note::factory()->count(30)->create(['user_id' => $user->id]);
     }
 }

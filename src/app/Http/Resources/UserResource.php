@@ -24,7 +24,7 @@ class UserResource extends JsonResource
                 'id' => $this->id,
                 'name' => $this->name,
                 'email' => $this->email,
-                "notices" => NoticeResource::collection($this->whenLoaded("notices")),
+                "notes" => NoteResource::collection($this->whenLoaded("notes")),
                 'created_at' => $this->created_at->getTimestamp(),
                 'updated_at' => $this->updated_at->getTimestamp(),
             ]

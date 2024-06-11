@@ -79,12 +79,12 @@ class User extends Authenticatable implements JWTSubject
     }
 
     /**
-     * user notices
+     * user notes
      *
      * @return HasMany
      */
-    public function notices(): HasMany
+    public function notes(): HasMany
     {
-        return $this->hasMany(Notice::class);
+        return $this->hasMany(Note::class);
     }
 }

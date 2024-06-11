@@ -2,11 +2,10 @@
 
 namespace App\Policies;
 
-use App\Models\Notice;
+use App\Models\Note;
 use App\Models\User;
-use Illuminate\Auth\Access\Response;
 
-class NoticePolicy
+class NotePolicy
 {
     /**
      * Determine whether the user can view any models.
@@ -19,9 +18,9 @@ class NoticePolicy
     /**
      * Determine whether the user can view the model.
      */
-    public function view(User $user, Notice $notice): bool
+    public function view(User $user, Note $note): bool
     {
-        return $user->id === $notice->user_id;
+        return $user->id === $note->user_id;
     }
 
     /**
@@ -35,23 +34,23 @@ class NoticePolicy
     /**
      * Determine whether the user can update the model.
      */
-    public function update(User $user, Notice $notice): bool
+    public function update(User $user, Note $note): bool
     {
-        return $user->id === $notice->user_id;
+        return $user->id === $note->user_id;
     }
 
     /**
      * Determine whether the user can delete the model.
      */
-    public function delete(User $user, Notice $notice): bool
+    public function delete(User $user, Note $note): bool
     {
-        return $user->id === $notice->user_id;
+        return $user->id === $note->user_id;
     }
 
     /**
      * Determine whether the user can restore the model.
      */
-    public function restore(User $user, Notice $notice): bool
+    public function restore(User $user, Note $note): bool
     {
         //
     }
@@ -59,7 +58,7 @@ class NoticePolicy
     /**
      * Determine whether the user can permanently delete the model.
      */
-    public function forceDelete(User $user, Notice $notice): bool
+    public function forceDelete(User $user, Note $note): bool
     {
         //
     }

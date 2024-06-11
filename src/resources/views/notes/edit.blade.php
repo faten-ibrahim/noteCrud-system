@@ -8,12 +8,12 @@
                     <div class="card-body">
                         <div class="ibox float-e-margins">
                             <div class="ibox-title">
-                                <h5>Edit Notice</h5>
+                                <h5>Edit Note</h5>
                             </div>
                             <div class="ibox-content">
                                 <div class="row">
                                     <div class="col-md-12">
-                                        {{ html()->modelForm($notice, 'PUT', route('notices.update', [$notice->id]))->open() }}
+                                        {{ html()->modelForm($note, 'PUT', route('notes.update', [$note->id]))->open() }}
                                         {{ html()->textarea('content') }}
                                         {{ html()->submit($text = 'submit')}}
 

@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>notices</title>
+    <title>notes</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.datatables.net/1.11.4/css/dataTables.bootstrap5.min.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
@@ -14,7 +14,7 @@
 
     <div class="container">
         <div class="card mt-5">
-            <h3 class="card-header p-3">My Notices</h3>
+            <h3 class="card-header p-3">My Notes</h3>
             <div class="card-body">
 
                 @if (session('status'))
@@ -24,8 +24,8 @@
                     </div>
                 @endif
                 <br>
-                <a class="btn btn-info btn-sm" href="notices/create"><i class="fa fa-plus"></i><span>Add New
-                        Notice</span></a><br><br>
+                <a class="btn btn-info btn-sm" href="notes/create"><i class="fa fa-plus"></i><span>Add New
+                        note</span></a><br><br>
 
                 <table class="table table-bordered data-table">
                     <thead>
@@ -51,7 +51,7 @@
         var table = $('.data-table').DataTable({
             processing: true,
             serverSide: true,
-            ajax: "{{ route('notices.index') }}",
+            ajax: "{{ route('notes.index') }}",
             columns: [{
                     data: 'id',
                     name: 'id'

@@ -7,10 +7,10 @@ use Illuminate\Support\Collection;
 use Illuminate\Database\Eloquent\Model;
 
 
-interface NoticeRepositoryInterface
+interface NoteRepositoryInterface
 {
     /**
-     * get all notices
+     * get all notes
      *
      * @return Collection
      */
