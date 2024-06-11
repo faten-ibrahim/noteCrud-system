@@ -18,7 +18,17 @@
         <div class="card mt-5">
             <h3 class="card-header p-3">My Notes</h3>
             <div class="card-body">
-
+                {{-- ==== log out link ==== --}}
+                <a class="btn btn-pramry btn-sm" href="{{ route('logout') }}"
+                    onclick="event.preventDefault();
+                              document.getElementById('logout-form').submit();">
+                    {{ __('Logout') }}
+                </a>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                    @csrf
+                </form> </br>
+                {{-- ========= --}}
+                
                 @if (session('status'))
                     <div class="alert alert-success">
                         <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
